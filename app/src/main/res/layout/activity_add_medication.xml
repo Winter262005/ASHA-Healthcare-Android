@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F7FA"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Medication"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#1A202C"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Systematic Form Section -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <EditText
+                android:id="@+id/edit_med_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:hint="Medicine Name (e.g. Paracetamol)"
+                android:background="@null"
+                android:paddingBottom="8dp"
+                android:layout_marginBottom="12dp"
+                android:inputType="textCapWords"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E8F0"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="When to take?"
+                android:textStyle="bold"
+                android:textColor="#4A5568"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Checkboxes for Timing with New Default Labels -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <CheckBox
+                    android:id="@+id/cb_morning"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Morn\n(12:00 PM)"
+                    android:textSize="12sp"
+                    android:buttonTint="@color/health_primary"/>
+
+                <CheckBox
+                    android:id="@+id/cb_evening"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Eve\n(4:00 PM)"
+                    android:textSize="12sp"
+                    android:buttonTint="@color/health_primary"/>
+
+                <CheckBox
+                    android:id="@+id/cb_night"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Night\n(8:00 PM)"
+                    android:textSize="12sp"
+                    android:buttonTint="@color/health_primary"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edit_notes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:hint="Additional Notes (e.g. After food)"
+                android:background="@null"
+                android:paddingBottom="8dp"
+                android:layout_marginBottom="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E8F0"
+                android:layout_marginBottom="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_select_time"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Set Time"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/button_save_med"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5"
+                    android:text="Save &amp; Set Alarm"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    android:backgroundTint="#2D3748"
+                    android:textColor="@android:color/white"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Medications"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#4A5568"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- List Section -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_medications"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+</LinearLayout>

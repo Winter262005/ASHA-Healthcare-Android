@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Standard Material Colors (Used by the Framework) -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- ASHA Healthcare Helper Brand Colors -->
+    <color name="health_primary">#009688</color> <!-- Teal 500 -->
+    <color name="health_primary_dark">#00796B</color> <!-- Teal 700 -->
+    <color name="health_accent">#4CAF50</color> <!-- Green 500 -->
+
+    <color name="background_light">#F5F5F5</color>
+</resources>

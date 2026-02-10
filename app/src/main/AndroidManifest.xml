@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions required for Medication Alarms and Notifications -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Healthcare"
+        tools:targetApi="31">
+
+        <!-- Main Launcher Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Healthcare">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Symptom Checker Screen -->
+        <activity
+            android:name=".SymptomCheckerActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Disease Detail Screen -->
+        <activity
+            android:name=".DiseaseDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".SymptomCheckerActivity" />
+
+        <!-- Medication Tracker (List Screen) -->
+        <activity
+            android:name=".MedicationTrackerActivity"
+            android:exported="false"
+            android:label="Medication Tracker"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Add Medication Screen -->
+        <activity
+            android:name=".AddMedicationActivity"
+            android:exported="false"
+            android:label="Add Medication"
+            android:parentActivityName=".MedicationTrackerActivity" />
+
+        <!-- Broadcast Receiver for Alarms -->
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

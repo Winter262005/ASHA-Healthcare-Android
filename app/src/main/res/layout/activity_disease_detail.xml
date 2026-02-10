@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_light"
+    tools:context=".DiseaseDetailActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_detail"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppTheme.Toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/text_disease_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/health_primary_dark"
+                android:layout_marginBottom="16dp"
+                tools:text="Common Cold (Viral Infection)" />
+
+            <androidx.cardview.widget.CardView
+                style="@style/DetailCardStyle"
+                android:layout_marginBottom="16dp">
+                <LinearLayout style="@style/DetailSectionLayout">
+                    <TextView style="@style/DetailHeader" android:text="Symptoms" />
+                    <TextView
+                        android:id="@+id/text_symptoms_content"
+                        style="@style/DetailContent"
+                        tools:text="Runny nose, sneezing, sore throat, cough, mild fever, headache, body aches." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/DetailCardStyle"
+                android:layout_marginBottom="16dp">
+                <LinearLayout style="@style/DetailSectionLayout">
+                    <TextView style="@style/DetailHeader" android:text="Immediate First Aid" />
+                    <TextView
+                        android:id="@+id/text_first_aid_content"
+                        style="@style/DetailContent"
+                        tools:text="Rest, stay hydrated (water, clear fluids), use saline nasal spray, over-the-counter pain relievers (Paracetamol)." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                style="@style/DetailCardStyle">
+                <LinearLayout style="@style/DetailSectionLayout">
+                    <TextView style="@style/DetailHeader" android:text="Long-Term Treatment / Next Steps" />
+                    <TextView
+                        android:id="@+id/text_long_term_content"
+                        style="@style/DetailContent"
+                        tools:text="Viral infections resolve themselves. Focus on immune support (Vitamin C, Zinc) and hygiene to prevent spread." />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

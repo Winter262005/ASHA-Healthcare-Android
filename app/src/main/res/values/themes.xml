@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="Theme.Healthcare" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!-- Primary brand color -->
+        <item name="colorPrimary">@color/health_primary</item>
+        <item name="colorPrimaryDark">@color/health_primary_dark</item>
+        <item name="colorAccent">@color/health_accent</item>
+
+        <!-- Enable window content transitions -->
+        <item name="android:windowActivityTransitions" tools:targetApi="lollipop">true</item>
+    </style>
+
+    <!-- Theme used for the Toolbar's title and menu items (dark icons on light background) -->
+    <style name="ThemeOverlay.AppTheme.Toolbar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Text color of Toolbar title and menu items -->
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <style name="DetailCardStyle" parent="CardView.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardCornerRadius">8dp</item>
+        <item name="cardElevation">4dp</item>
+    </style>
+
+    <style name="DetailSectionLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="DetailHeader">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/health_primary</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="DetailContent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>
